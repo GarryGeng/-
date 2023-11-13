@@ -1,8 +1,9 @@
+# 下面填写你自己的mysql服务器设置
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/ifmanage_design_wzq1?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    password:
+    url: jdbc:mysql://localhost:3306/test
     driver-class-name: com.mysql.jdbc.Driver
 
 # Mybatis
