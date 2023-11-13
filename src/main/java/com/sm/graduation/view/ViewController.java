@@ -169,7 +169,7 @@ public class ViewController {
         return "page/checkIn";
     }
 
-    /** 护理 */
+    /** 服务 */
     @GetMapping("/nursing")
     public String nursing(){
         return "page/nursing";

@@ -68,7 +68,7 @@
               "target": "_self"
             },
             {
-              "title": "护理费用",
+              "title": "服务费用",
               "href": "view/nursing",
               "icon": "fa fa-viacoin",
               "target": "_self"

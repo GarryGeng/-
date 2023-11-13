@@ -260,8 +260,8 @@ INSERT INTO `monthly_catering` VALUES (15, '烤肉', 66, '2021-04');
 -- ----------------------------
 -- Table structure for nursing
 -- ----------------------------
-DROP TABLE IF EXISTS `nursing`;
-CREATE TABLE `nursing`  (
+DROP TABLE IF EXISTS `service`;
+CREATE TABLE `service`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '编号',
   `nurse_rank` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '等级',
   `cost` int(11) NULL DEFAULT NULL COMMENT '费用',
@@ -269,13 +269,13 @@ CREATE TABLE `nursing`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
--- Records of nursing
+-- Records of service
 -- ----------------------------
-INSERT INTO `nursing` VALUES (1, '普通', 1000);
-INSERT INTO `nursing` VALUES (2, '初级', 2000);
-INSERT INTO `nursing` VALUES (3, '中级', 3000);
-INSERT INTO `nursing` VALUES (4, '高级', 4000);
-INSERT INTO `nursing` VALUES (5, '特级', 5000);
+INSERT INTO `service` VALUES (1, '普通护理', 1000);
+INSERT INTO `service` VALUES (2, '初级护理', 2000);
+INSERT INTO `service` VALUES (3, '中级护理', 3000);
+INSERT INTO `service` VALUES (4, '高级护理', 4000);
+INSERT INTO `service` VALUES (5, '特级护理', 5000);
 
 -- ----------------------------
 -- Table structure for older_info

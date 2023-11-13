@@ -431,7 +431,7 @@ public class RootInfoController {
         PageInfo<CheckIn> page = new PageInfo<>(checkIns);
         return successData(page.getTotal(), checkIns);
     }
-    /** 护理费用 */
+    /** 服务费用 */
     @RequestMapping("/nursing")
     public AjaxResult nursing(@RequestParam(defaultValue = "1", value = "page") Integer pageNum,
                               @RequestParam(defaultValue = "10", value = "limit") Integer pageSize,
