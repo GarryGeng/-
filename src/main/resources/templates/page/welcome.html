@@ -2,70 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.min.css}" media="all">
+    <script th:href="@{/static/js/bootstrap.min.js}" media="all"></script>
     <head th:include="commom::title('首页')"></head>
     <style>
-        .top-panel {
-            border: 1px solid #eceff9;
-            border-radius: 5px;
-            text-align: center;
-        }
         .top-panel > .layui-card-body{
             height: 60px;
         }
-        .top-panel-number{
-            line-height:60px;
-            font-size: 30px;
-            border-right:1px solid #eceff9;
-        }
-        .top-panel-tips{
-            line-height:30px;
-            font-size: 12px
-        }
     </style>
-
 </head>
 <body>
-<!--按照
-https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/
-更改
--->
-<div class="layuimini-main">
-    <div class="layui-row layui-col-space15">
-        <div class="layui-col-xs12 layui-col-md12">
-            <div class="layui-card top-panel">
-                <div class="layui-card-header top-panel-number">当前时间</div>
-                <div class="layui-card-body">
-                    <div class="layui-row ">
-                        <div class="top-panel-number" id="datetime">
-                        </div>
-                    </div>
+<div class="">
+    <div class="layui-col-md8">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <strong style="font-size: 18px;">缴费提醒⏰</strong>
+            </div>
+            <div class="layui-card-body">
+                <div class="alert alert-light" role="alert">
+                    没有用户需要提醒缴费
+                </div>
+                <div class="alert alert-warning" role="alert">
+                    需要提醒 <strong>张三</strong> 缴费
                 </div>
             </div>
         </div>
-
-        <div class="card">
-            <div class="card-header">
-                缴费提醒⏰
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <br>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                </blockquote>
-            </div>
-        </div>
-
     </div>
 
-
+    <br>
 
     <div class="layui-row layui-col-space15">
         <div class="layui-col-xs12 layui-col-md9">
             <div id="echarts-records" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
         </div>
+
+        <br>
+        <br>
 
         <div class="layui-col-xs12 layui-col-md3">
             <div id="echarts-pies" style="background-color:#ffffff;min-height:400px;padding: 10px"></div>
@@ -74,12 +46,9 @@ https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/
 
 
 
-</div>
-
 <script th:src="@{/static/lib/layui-v2.5.5/layui.js}" charset="utf-8"></script>
 <script th:src="@{/static/js/lay-config.js(v=1.0.4)}" charset="utf-8"></script>
 <script>
-    setInterval("document.getElementById('datetime').innerHTML=new Date().toLocaleString();", 1000);
     layui.use(['layer', 'echarts'], function () {
         const $ = layui.jquery,
             layer = layui.layer,
