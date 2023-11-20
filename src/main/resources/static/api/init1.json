@@ -28,7 +28,7 @@
               "target": "_self"
             },
             {
-              "title": "用户账号",
+              "title": "员工数据",
               "href": "view/usrList",
               "icon": "fa fa-tachometer",
               "target": "_self"
